@@ -1,0 +1,85 @@
+:root {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #171717;
+  --bg-tertiary: #262626;
+
+  --accent-orange: #FF6600;
+  /* Vibrant Roblox-like Orange */
+  --accent-orange-dim: #CC5200;
+  --accent-glow: rgba(255, 102, 0, 0.5);
+
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+
+  --font-main: 'Outfit', sans-serif;
+
+  --border-radius: 24px;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-orange);
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #fff 30%, var(--accent-orange) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.glass-panel {
+    background: rgba(23, 23, 23, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mask-gradient-sides {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Animations */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+    animation: marquee 10s linear infinite;
+}
+
+/* Scroll Animations */
+.scrolled-down {
+    padding-top: 0.75rem !important; /* py-3 */
+    padding-bottom: 0.75rem !important;
+}
+
+/* Element visibility states for JS intersection observer */
+[data-animate] {
+    transition-duration: 0.8s;
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+    transition-property: opacity, transform;
+}
+
+.animate-in {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important;
+}

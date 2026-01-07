@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaatar Dev | Roblox Scripter</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/headie.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bg-primary': '#0a0a0a',
+                        'bg-secondary': '#171717',
+                        'bg-tertiary': '#262626',
+                        'accent-orange': '#FF6600',
+                        'accent-orange-dim': '#CC5200',
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="bg-[#0a0a0a] text-white selection:bg-[#FF6600] selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar"
+        class="fixed top-4 left-0 right-0 mx-auto w-[90%] max-w-5xl z-50 transition-all duration-300 py-5 opacity-0 -translate-y-[100px]"
+        data-animate="slide-down">
+        <div
+            class="glass-panel rounded-full px-6 py-3 flex items-center justify-between shadow-lg shadow-orange-900/10">
+            <div class="flex items-center gap-2">
+                <!-- Using the headshot as a logo icon -->
+                <img src="assets/avatar_headshot.png" alt="Zaatar Dev"
+                    class="w-10 h-10 rounded-full border-2 border-orange-500">
+                <span class="font-bold text-xl tracking-tight text-white">
+                    Zaatar<span class="text-[#FF6600]">Dev</span>
+                </span>
+            </div>
+
+            <!-- Grouped Buttons -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="#projects"
+                    class="bg-[#262626] hover:bg-[#333] text-white px-5 py-2 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-black/20">
+                    Projects
+                </a>
+                <a href="#contact"
+                    class="bg-[#FF6600] hover:bg-[#ff8534] text-white px-5 py-2 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-orange-500/20">
+                    Let's Talk
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[200px]">
+
+            <!-- Main Intro Card -->
+            <div class="md:col-span-2 md:row-span-2 bg-[#171717] rounded-[32px] p-10 flex flex-col justify-between relative overflow-hidden group opacity-0 translate-y-5"
+                data-animate="fade-up">
+                <div class="z-10">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                        Scripting <span class="text-[#FF6600]">
+                            <br />Roblox Games</span>.
+                    </h1>
+                    <p class="text-gray-400 text-xl max-w-md mb-8">
+                        I'm Zaatar Dev. I code stuff.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#projects"
+                            class="bg-[#FF6600] text-white px-8 py-4 rounded-full font-bold text-lg flex items-center gap-2 hover:bg-[#ff8534] transition-all transform hover:scale-105 shadow-lg shadow-orange-500/25">
+                            My Projects <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#contact"
+                            class="bg-[#262626] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-700 transition-colors">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Decorative Background Blur -->
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-orange-600/10 blur-[100px] rounded-full pointer-events-none">
+                </div>
+            </div>
+
+            <!-- Character Card -->
+            <div class="md:col-span-1 md:row-span-2 bg-[#FF6600] rounded-[32px] relative overflow-hidden flex items-end justify-center group opacity-0 scale-90"
+                data-animate="scale-up" style="transition-delay: 0.1s;">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                <img src="assets/character_full.png" alt="Character"
+                    class="absolute w-[180%] max-w-none bottom-[-10%] md:w-[220%] md:bottom-[-20%] object-contain transition-transform duration-500 group-hover:scale-105 z-0">
+                <div class="relative z-20 p-6 w-full">
+                    <div class="glass-panel rounded-2xl p-4 text-center">
+                        <p class="text-white font-bold text-lg">Zaatar Dev</p>
+                        <p class="text-orange-200 text-sm">Scripter</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tech Stack Card -->
+            <div class="md:col-span-1 bg-[#171717] rounded-[32px] p-6 flex flex-col justify-between hover:bg-[#202020] transition-colors overflow-hidden opacity-0 translate-y-5"
+                data-animate="fade-up" style="transition-delay: 0.2s;">
+                <div class="w-full">
+                    <h3 class="text-xl font-bold text-white mb-4">Tech Stack</h3>
+                    <!-- Marquee Container -->
+                    <div class="flex overflow-hidden w-full mask-gradient-sides">
+                        <!-- Animated Track -->
+                        <div class="flex gap-3 whitespace-nowrap animate-marquee">
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">LuaU</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">Rojo</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">Github</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">React
+                                LuaU</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">Fast
+                                Cast</span>
+                            <!-- Duplicate for infinite loop -->
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">LuaU</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">Rojo</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">Github</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">React
+                                LuaU</span>
+                            <span
+                                class="px-3 py-1 bg-white/5 rounded-full text-xs font-medium text-gray-300 border border-white/5 hover:border-[#FF6600]/50 transition-colors">Fast
+                                Cast</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5">
+                    <p class="text-xs text-gray-500 uppercase tracking-wider mb-1">Currently Learning</p>
+                    <span class="text-[#FF6600] font-bold flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-[#FF6600] animate-pulse"></span> Knit
+                    </span>
+                </div>
+            </div>
+
+            <!-- Availability Card -->
+            <div class="md:col-span-2 bg-[#171717] rounded-[32px] p-6 flex items-center justify-between px-10 hover:bg-[#202020] transition-colors group opacity-0 translate-y-5"
+                data-animate="fade-up" style="transition-delay: 0.3s;">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-1">Status: <span class="text-green-400">Available</span>
+                    </h3>
+                    <p class="text-gray-400">Ready to take on new commissions.</p>
+                </div>
+                <div class="w-4 h-4 rounded-full bg-green-500 shadow-[0_0_20px_rgba(34,197,94,0.6)] animate-pulse">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 flex items-center gap-4 opacity-0 -translate-x-5"
+            data-animate="slide-right">
+            <span class="w-12 h-1 bg-[#FF6600] rounded-full"></span>
+            Featured <span class="text-[#FF6600]">Systems / Projects</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="group relative bg-[#171717] rounded-[32px] overflow-hidden hover:shadow-[0_0_40px_rgba(255,102,0,0.15)] transition-all duration-300 transform hover:-translate-y-2 opacity-0 translate-y-5"
+                data-animate="fade-up" style="transition-delay: 0s;">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-[#FF6600] opacity-0 group-hover:opacity-10 transition-opacity z-10">
+                    </div>
+                    <img src="assets/MiningSys.png" alt="Mining System"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-[#FF6600] text-xs font-bold uppercase tracking-wider">System</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 group-hover:text-[#FF6600] transition-colors">
+                                Mining System</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        A high-fidelity mining system with the same Mining style as The Forge.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group relative bg-[#171717] rounded-[32px] overflow-hidden hover:shadow-[0_0_40px_rgba(255,102,0,0.15)] transition-all duration-300 transform hover:-translate-y-2 opacity-0 translate-y-5"
+                data-animate="fade-up" style="transition-delay: 0.1s;">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-[#FF6600] opacity-0 group-hover:opacity-10 transition-opacity z-10">
+                    </div>
+                    <img src="assets/FPS.png" alt="FPS System"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-[#FF6600] text-xs font-bold uppercase tracking-wider">System</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 group-hover:text-[#FF6600] transition-colors">
+                                FPS System</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        A high-fidelity FPS system with OOP based architecture, and a lot of features.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="group relative bg-[#171717] rounded-[32px] overflow-hidden hover:shadow-[0_0_40px_rgba(255,102,0,0.15)] transition-all duration-300 transform hover:-translate-y-2 opacity-0 translate-y-5"
+                data-animate="fade-up" style="transition-delay: 0.2s;">
+                <div class="h-48 overflow-hidden relative">
+                    <div class="absolute inset-0 bg-[#FF6600] opacity-0 group-hover:opacity-10 transition-opacity z-10">
+                    </div>
+                    <img src="assets/BuildSys.png" alt="Build System"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="text-[#FF6600] text-xs font-bold uppercase tracking-wider">System</span>
+                            <h3 class="text-2xl font-bold text-white mt-1 group-hover:text-[#FF6600] transition-colors">
+                                Build System</h3>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        A high-fidelity build system with a polished and animated placement system, and an animated GUI.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-6 border-t border-white/5 bg-[#0a0a0a]">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+                Ready to turn your idea into <span class="text-[#FF6600]">reality?</span>
+            </h2>
+            <p class="text-gray-400 mb-10 text-lg">
+                I'm most active on Discord! Feel free to reach out there or via email.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 mb-16">
+                <!-- Discord Button -->
+                <button id="discord-btn"
+                    class="group relative bg-[#5865F2] hover:bg-[#4752C4] text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-[#5865F2]/20 flex items-center gap-3">
+                    <i data-lucide="copy" class="w-5 h-5 icon-copy"></i>
+                    <i data-lucide="check" class="w-5 h-5 icon-check hidden"></i>
+                    <span id="discord-text">Copy Discord User</span>
+                    <span
+                        class="absolute -top-3 -right-3 bg-red-500 text-white text-[10px] px-2 py-1 rounded-full animate-bounce font-bold">
+                        PREFERRED
+                    </span>
+                </button>
+
+                <!-- Email Button -->
+                <a href="mailto:K.hawash3h@gmail.com"
+                    class="bg-[#262626] hover:bg-[#333] text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center gap-3">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Email Me
+                </a>
+            </div>
+
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://github.com/ZaatarDev" target="_blank" rel="noopener noreferrer"
+                    class="p-3 bg-[#171717] rounded-full text-gray-400 hover:text-[#FF6600] hover:bg-[#262626] transition-all transform hover:-translate-y-1"
+                    title="Github">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </a>
+                <a href="https://www.roblox.com/users/1682258373/profile" target="_blank" rel="noopener noreferrer"
+                    class="p-3 bg-[#171717] rounded-full text-gray-400 hover:text-[#FF6600] hover:bg-[#262626] transition-all transform hover:-translate-y-1"
+                    title="Roblox">
+                    <!-- Custom SVG for Roblox icon since Lucide might not have it -->
+                    <i data-lucide="gamepad-2" class="w-6 h-6"></i>
+                </a>
+                <a href="mailto:K.hawash3h@gmail.com" target="_blank" rel="noopener noreferrer"
+                    class="p-3 bg-[#171717] rounded-full text-gray-400 hover:text-[#FF6600] hover:bg-[#262626] transition-all transform hover:-translate-y-1"
+                    title="Email">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+                <p>© 2026 Zaatar Dev. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
