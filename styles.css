@@ -1,19 +1,19 @@
 :root {
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #171717;
-  --bg-tertiary: #262626;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #171717;
+    --bg-tertiary: #262626;
 
-  --accent-orange: #FF6600;
-  /* Vibrant Roblox-like Orange */
-  --accent-orange-dim: #CC5200;
-  --accent-glow: rgba(255, 102, 0, 0.5);
+    --accent-orange: #FF6600;
+    /* Vibrant Roblox-like Orange */
+    --accent-orange-dim: #CC5200;
+    --accent-glow: rgba(255, 102, 0, 0.5);
 
-  --text-primary: #ffffff;
-  --text-secondary: #a3a3a3;
+    --text-primary: #ffffff;
+    --text-secondary: #a3a3a3;
 
-  --font-main: 'Outfit', sans-serif;
+    --font-main: 'Outfit', sans-serif;
 
-  --border-radius: 24px;
+    --border-radius: 24px;
 }
 
 body {
@@ -41,6 +41,7 @@ body {
 .text-gradient {
     background: linear-gradient(135deg, #fff 30%, var(--accent-orange) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -58,8 +59,13 @@ body {
 
 /* Animations */
 @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .animate-marquee {
@@ -68,7 +74,8 @@ body {
 
 /* Scroll Animations */
 .scrolled-down {
-    padding-top: 0.75rem !important; /* py-3 */
+    padding-top: 0.75rem !important;
+    /* py-3 */
     padding-bottom: 0.75rem !important;
 }
 
@@ -82,4 +89,138 @@ body {
 .animate-in {
     opacity: 1 !important;
     transform: translate(0, 0) scale(1) !important;
+}
+
+/* Hero Glow Animation */
+.hero-glow {
+    position: relative;
+}
+
+.hero-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    /* Adapt to parent radius */
+    padding: 4px;
+    /* Border thickness */
+    /* Seamless horizontal loop */
+    background: linear-gradient(90deg, var(--accent-orange), transparent 20%, transparent 80%, var(--accent-orange));
+    background-size: 200% 100%;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    /* Neon Filter */
+    filter: drop-shadow(0 0 5px var(--accent-orange)) drop-shadow(0 0 15px var(--accent-orange));
+    animation: glow-move 3s linear infinite;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 1;
+}
+
+@keyframes glow-move {
+    0% {
+        background-position-x: 0%;
+    }
+
+    100% {
+        background-position-x: 200%;
+    }
+}
+
+/* Uiverse 3D Card (Adapted) */
+.parent {
+    width: 100%;
+    /* Responsive width */
+    padding: 20px;
+    perspective: 1000px;
+}
+
+.uiverse-card {
+    padding-top: 50px;
+    /* border property removed */
+    transform-style: preserve-3d;
+    /* Image background with dark overlay */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('assets/M&Z.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-color: #0a0a0a;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 30px 30px -10px;
+    transition: transform 0.1s ease-out;
+    border-radius: 24px;
+    min-height: 500px;
+    /* Taller */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.uiverse-card:hover {
+    background-position: center;
+    /* transform handled by JS */
+}
+
+.content-box {
+    background: rgba(255, 102, 0, 0.9);
+    /* Orange background */
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+    padding: 20px;
+    /* Reduced padding */
+    transform-style: preserve-3d;
+    margin: 0 0 30px 0;
+    /* Bottom margin only */
+    backdrop-filter: blur(5px);
+    max-width: 85%;
+    text-align: center;
+}
+
+.content-box .card-title {
+    display: inline-block;
+    color: white;
+    font-size: 28px;
+    /* Slightly smaller font */
+    font-weight: 900;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
+}
+
+.content-box .card-title:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .card-content {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 30px);
+}
+
+.content-box .card-content:hover {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.content-box .see-more {
+    cursor: pointer;
+    margin-top: 1.5rem;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--accent-orange);
+    background: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+}
+
+.content-box .see-more:hover {
+    transform: translate3d(0px, 0px, 60px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
